@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg" style="background-color: black;" >
+    <a class="navbar-brand" routerLink="post-list" style="color:white" >CRUD</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+        <a routerLink="/post-list"  class="nav-link" style="color:white" >Home</a>
+        </li>
+        <li class="nav-item">
+        <a routerLink='/post-add' class="nav-link" style="color:white">Create Post  </a>
+    </li>   
+    </ul>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-success" type="submit">Search</button> 
+       <!-- <button class="nav-link btn btn-outline-success" type="submit" (click)="onSave()">SAVE</button> &nbsp;&nbsp;
+      <button class="nav-link btn btn-outline-success" type="submit" (click)="onFetch()">GET</button> &nbsp;&nbsp;  -->
+      <button class="nav-link btn btn-success" type="submit">Sign In</button>
+      <button class="nav-link btn btn-success" type="submit">Sign Up</button>
+    </form>
+  </div>
+</nav>
