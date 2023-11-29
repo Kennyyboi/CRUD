@@ -34,7 +34,7 @@
   <form class="forms" (ngSubmit)="onAddComment(commentInput.value)">
     <label class="font-weight-bold">Comments</label>
     <div *ngFor="let comment of comments; let i = index">
-      {{ comment }}
+       {{ comment }}
       <button class="btn btn-outline-primary" (click)="onEditComment(i, 'New Comment')">Edit</button>
       <button class="btn btn-outline-danger" (click)="onDeleteComment(i)">Delete</button>
     </div>
