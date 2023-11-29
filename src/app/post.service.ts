@@ -12,7 +12,7 @@ export class PostService {
   }
   listChangedEvent: EventEmitter<Post[]> = new EventEmitter();
   listOfPosts: Post[] = [
-
+  
     //   new Post("TechCrunch",
     //     "https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2021/12/techcrunch-website-homepage-1024x542.webp",
     //     "TechCrunch is a blog that provides technology and startup news, from the latest developments in Silicon Valley to venture capital funding.",
@@ -50,6 +50,10 @@ export class PostService {
     this.listOfPosts[index].numberOfLikes++;
     this.saveData();
   }
+  dislikePost(index: number) {
+    this.listOfPosts[index].numberOfDislikes++;
+    this.saveData();
+  }
   addComment(index: number, comment: string) {
     this.listOfPosts[index].comments.push(comment);
     this.saveData();
@@ -60,6 +64,20 @@ export class PostService {
   setPosts(listOfPosts: Post[]) {
     this.listOfPosts = listOfPosts;
     this.listChangedEvent.emit(listOfPosts);
+  }
+
+  editComment(postIndex: number, commentIndex: number, newText: string): void {
+    if (this.listOfPosts[postIndex]?.comments) {
+      this.listOfPosts[postIndex].comments[commentIndex] = newText;
+      this.saveData();
+    }
+  }
+  
+  deleteComment(postIndex: number, commentIndex: number): void {
+    if (this.listOfPosts[postIndex]?.comments) {
+      this.listOfPosts[postIndex].comments.splice(commentIndex, 1);
+      this.saveData();
+    }
   }
 
 
@@ -78,4 +96,6 @@ fetchData() {
      this.setPosts(listofPosts);
     });
 }
+
 }
+

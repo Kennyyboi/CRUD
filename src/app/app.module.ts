@@ -10,6 +10,8 @@ import { HeaderComponent } from './header/header.component';
 import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 const routes : Routes= [
   {path: '', redirectTo: 'post-list', pathMatch: 'full'},
@@ -28,6 +30,7 @@ const routes : Routes= [
     PostEditComponent,
     PostListComponent,
     HeaderComponent,
+  
     
   ],
   imports: [
@@ -35,7 +38,8 @@ const routes : Routes= [
     FormsModule,
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
     
   ],
   providers: [],

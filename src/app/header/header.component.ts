@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BackEndService } from '../back-end.service';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../post.service';
+import { ThemeService } from '../theme.service';
+
+
 
 @Component({
   selector: 'app-header',
@@ -10,10 +13,23 @@ import { PostService } from '../post.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private backEndService: BackEndService, private postservice: PostService, private route: ActivatedRoute) { }
+  constructor(
+    private backEndService:BackEndService, 
+    private postservice: PostService, 
+    private route: ActivatedRoute,
+    private themeService: ThemeService
+    ) { }
 
+  
   ngOnInit(): void {
   }
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
+  }
+
+  isDarkTheme(): boolean {
+    return this.themeService.isDarkThemeEnabled();
 
   // onSave() {
   //   this.backEndService.saveData();
@@ -22,4 +38,5 @@ export class HeaderComponent implements OnInit {
   //   this.backEndService.fetchData();
   // }
 
+}
 }

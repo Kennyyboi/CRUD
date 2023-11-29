@@ -1,0 +1,31 @@
+.title{
+    text-align: center;
+    align-items: center;
+    font-size: 100%;
+    margin-top: 5%;
+    margin-left: 35cap;
+}
+
+.img-responsive{
+    box-shadow: 5px 5px 20px 20px #f5000040;
+    margin-left:30vh;
+    width: 80vh;
+}
+
+.description{
+    margin-left: 40%;
+}
+
+.author{
+    margin-left: 40%;
+}
+.date{
+    margin-left: 40%;
+}
+
+.btn.btn-outline-primary{
+    margin-left: 40%;
+}
+.forms{
+    margin-left: 40%;
+}

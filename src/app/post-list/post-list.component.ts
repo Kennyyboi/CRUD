@@ -11,8 +11,8 @@ import { BackEndService } from '../back-end.service';
 })
 
 export class PostListComponent implements OnInit{
+  searchTerm: string = '';
   listofPosts: Post[]=[
-
   ];
 
   constructor(private PostService: PostService, private router: Router, private backEndService: BackEndService){}
@@ -22,7 +22,10 @@ export class PostListComponent implements OnInit{
       this.PostService.listChangedEvent.subscribe((posts: Post[]) => {
         this.listofPosts = posts;
       });
+
+      
   }
+  
 }
 
 

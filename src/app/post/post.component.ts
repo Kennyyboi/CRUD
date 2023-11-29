@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class PostComponent implements OnInit {
 
-  memberName = "Lan";
+  memberName = "Ken";
   constructor(private postService: PostService, private router: Router) {
   }
   @Input() index: number = 0;
@@ -30,8 +30,20 @@ export class PostComponent implements OnInit {
   onLike() {
     this.postService.likePost(this.index)
   }
+  onDislike() {
+    this.postService.dislikePost(this.index);
+  }
   onAddComment(comment: string) {
     this.postService.addComment(this.index, comment);
     this.comments = this.postService.getComments(this.index); 
+  }
+  onEditComment(commentIndex: number, editedComment: string): void {
+    this.postService.editComment(this.index, commentIndex, editedComment);
+    this.comments = this.postService.getComments(this.index);
+  }
+  
+  onDeleteComment(commentIndex: number): void {
+    this.postService.deleteComment(this.index, commentIndex);
+    this.comments = this.postService.getComments(this.index);
   }
 }
