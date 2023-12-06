@@ -11,6 +11,9 @@ import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './signin/signin.component';
+
 
 
 const routes : Routes= [
@@ -19,6 +22,8 @@ const routes : Routes= [
   {path: 'post-add', component: PostEditComponent},
   {path: 'authentication', component: AuthComponent},
   { path: 'post-edit/:index', component: PostEditComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'signin', component: SigninComponent },
 ]
 
 
@@ -30,8 +35,9 @@ const routes : Routes= [
     PostEditComponent,
     PostListComponent,
     HeaderComponent,
+    SignupComponent,
+    SigninComponent,
   
-    
   ],
   imports: [
     BrowserModule,
@@ -39,8 +45,8 @@ const routes : Routes= [
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
     HttpClientModule,
-    FontAwesomeModule
-    
+    FontAwesomeModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

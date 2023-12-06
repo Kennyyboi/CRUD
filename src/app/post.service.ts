@@ -8,7 +8,6 @@ export class PostService {
   postService: any;
 
   constructor(private http: HttpClient){
-
   }
   listChangedEvent: EventEmitter<Post[]> = new EventEmitter();
   listOfPosts: Post[] = [
@@ -79,7 +78,7 @@ export class PostService {
       this.saveData();
     }
   }
-
+  
 
   saveData() {
     this.http.put('https://cc105-back-end-default-rtdb.asia-southeast1.firebasedatabase.app/post.json', 
