@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
+import { AngularFireModule } from '@angular/fire'
 
 
 
@@ -46,6 +47,15 @@ const routes : Routes= [
     ReactiveFormsModule,
     HttpClientModule,
     FontAwesomeModule,
+    AngularFireModule.InitializeApp({apiKey: "AIzaSyANQM8QstfQ9JxeWNum0Y9Sg--uhxhEZ7A",
+    authDomain: "cc105finals.firebaseapp.com",
+    databaseURL: "https://cc105finals-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "cc105finals",
+    storageBucket: "cc105finals.appspot.com",
+    messagingSenderId: "606922756440",
+    appId: "1:606922756440:web:f672a3c9be21601e8a552d",
+    measurementId: "G-90JF7LCBPP"
+  })
 
   ],
   providers: [],
