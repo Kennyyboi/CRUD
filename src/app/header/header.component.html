@@ -19,14 +19,14 @@
       <button class="btn btn-success" type="submit" >Search</button> 
        <!-- <button class="nav-link btn btn-outline-success" type="submit" (click)="onSave()">SAVE</button> &nbsp;&nbsp;
       <button class="nav-link btn btn-outline-success" type="submit" (click)="onFetch()">GET</button> &nbsp;&nbsp;  -->
-      
-      <button routerLink="/signin" class="nav-link btn btn-outline-success" type="submit" style="color:white">Sign In</button>
-      <button routerLink="/signup" class="nav-link btn btn-outline-success" type="submit" style="color:white">Sign Up</button>
+    </form>
+      <button routerLink='/signin' class="nav-link btn btn-outline-success" type="submit" style="color:white">Sign In</button>
+      <a routerLink='/authentication' class="nav-link btn btn-outline-success" style="color:white">Sign Up</a>
       
       <button class="theme" (click)="toggleTheme()"> 
       <i  [ngClass]="{'fas fa-lightbulb': !isDarkTheme(), 'fas fa-moon': isDarkTheme()}"></i>
       </button>
    
-  </form>
+
   </div>
 </nav>

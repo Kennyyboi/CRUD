@@ -1,20 +1,30 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {AngularFireAuth} from '@angular/fire/compat/auth';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import { from } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'AIzaSyCq_xw1sOdESUbSPbfuIGsAtcMg_OrsLJw';
+  signIn(email: string, password: string) {
+    return from(firebase.auth().signInWithEmailAndPassword(email, password));
+  }
+  constructor( private afAuth: AngularFireAuth ) {}
 
-  constructor(private http: HttpClient) {}
-
-  signup(userData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/signup`, userData);
+  signup(email: string, password: string): Promise<any> {
+    return firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Signed up
+        var user = userCredential.user;
+        console.log('User signed up:', user);
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.error('Error signing up:', errorCode, errorMessage);
+      });
   }
 
-  signin(userData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/signin`, userData);
-  }
 }

@@ -1,7 +1,7 @@
-// Import necessary modules and services
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service'; 
+import { Observable, catchError, tap } from 'rxjs';
 
 @Component({
   selector: 'app-signin',
@@ -9,40 +9,28 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./signin.component.css'],
 })
 export class SigninComponent {
-  // Declare properties for form inputs
-  email: string = '';
-  password: string = '';
+  email: string;
+  password: string;
+  
+  constructor(private authService: AuthService, private router: Router) {
+    this.email = '';
+    this.password = '';
+}
 
-  // Inject the AuthService and Router in the constructor
-  constructor(private authService: AuthService, private router: Router) {}
-
-  // Function to handle sign-in
-  signIn() {
-    // Check if the required fields are not empty
-    if (!this.email || !this.password) {
-      console.error('Please fill in all the required fields.');
-      return;
-    }
-
-    // Prepare credentials object
-    const credentials = {
-      email: this.email,
-      password: this.password,
-    };
-
-    // Call the sign-in method from the AuthService
-    this.authService.signin(credentials).subscribe(
-      (response) => {
-        console.log('Sign-in successful:', response);
-
-        // After successful sign-in, navigate to the home page or any other route
-        this.router.navigate(['/']);
-      },
-      (error) => {
-        console.error('Sign-in failed:', error);
-
-        // Handle the error, e.g., display an error message to the user
-      }
-    );
-  }
+signIn(email: string, password: string) {
+  this.authService.signIn(email, password)
+    .pipe(
+      tap((user: any) => {
+        console.log('User signed in:', user);
+        // Navigate to a different page if sign in is successful
+        this.router.navigate(['/post-list']);
+      }),
+      catchError((error: any) => {
+        console.error('Sign in failed:', error);
+        // Handle sign in failure (e.g., show an error message to the user)
+        throw error;
+      })
+    )
+    .subscribe();
+}
 }
