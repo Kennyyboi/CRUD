@@ -16,6 +16,7 @@ import { SigninComponent } from './signin/signin.component';
 import { AuthService } from './auth.service';
 import{AngularFireModule} from '@angular/fire/compat';
 import { initializeApp, getApps, getApp } from '@firebase/app';
+import { ToastrModule } from 'ngx-toastr';
 
 const firebaseConfig = {
   apiKey: "AIzaSyANQM8QstfQ9JxeWNum0Y9Sg--uhxhEZ7A",
@@ -55,6 +56,7 @@ const routes : Routes= [
     HttpClientModule,
     FontAwesomeModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    ToastrModule.forRoot(),
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
