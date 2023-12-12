@@ -33,6 +33,7 @@ export class PostComponent implements OnInit {
   onDislike() {
     this.postService.dislikePost(this.index);
   }
+  
   onAddComment(comment: string) {
     this.postService.addComment(this.index, comment);
     this.comments = this.postService.getComments(this.index); 

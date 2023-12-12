@@ -3,4 +3,6 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
 
 }
 
-
+.img-responsive{
+    width:100vh;
+}

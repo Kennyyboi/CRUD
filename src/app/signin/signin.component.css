@@ -1,6 +1,7 @@
-.signup-container {
+.signin-container {
     background-color: #A78B71;
     max-width: 400px;
+    margin: auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -28,7 +29,8 @@
     margin-bottom: 5px;
   }
   
-  input {
+  input[type="email"],
+  input[type="password"] {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
@@ -37,7 +39,7 @@
   }
   
   button {
-    background-color: rgb(0, 0, 0);
+    background-color: #000000;
     color: white;
     padding: 10px;
     border: none;
@@ -46,6 +48,6 @@
   }
   
   button:hover {
-    background-color: #414141;
+    background-color: #353535;
   }
   

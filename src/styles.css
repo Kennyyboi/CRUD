@@ -1,5 +1,5 @@
 .dark-theme {
-    background-color: #121212;
+    background-color: #27213c;
     color: #fdfbfb;
   }
 
@@ -8,20 +8,21 @@
     border: none;
     outline: none;
     margin-left: 5px;
+    color: #ffffff;
   }
 
   .nav-link.btn.btn-outline-success{
-    margin-left: 10px;
+    margin-left: 15px;
   }
 
   .btn.btn-success{
-    margin-left: 10px;
+    margin-left: 15px;
   }
 
   i{
     color:white;
     font-size: 1.5rem;
-    margin-right: 5px;
+    margin-right: 10px;
   }
   
 
