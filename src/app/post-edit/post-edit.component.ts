@@ -4,6 +4,8 @@ import { Post } from '../post-model';
 import { PostService } from '../post.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { BackEndService } from '../back-end.service';
+import { AuthService } from '../auth.service';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-post-edit',
@@ -20,6 +22,8 @@ export class PostEditComponent implements OnInit {
     private router: Router,
     private actRoute: ActivatedRoute,
     private backEndService: BackEndService,
+    private authService: AuthService,
+    private notificationService: NotificationService,
   ) {}
 
   ngOnInit(): void {
@@ -49,11 +53,12 @@ export class PostEditComponent implements OnInit {
     const title = this.form.value.title;
     const imgPath = this.form.value.imgPath;
     const description = this.form.value.description;
+    const author = this.authService.currentUser?.email || 'Anonymous';
     const post: Post = new Post(
       title,
       imgPath,
       description,
-      'Ken',
+      author,
       new Date(),
       0
     );
@@ -63,6 +68,7 @@ export class PostEditComponent implements OnInit {
     } else {
       this.postService.addPost(post);
       this.backEndService.saveData();
+      this.notificationService.showSuccess('Post created successfully!');
     }
     this.router.navigate(['post-list']);
   }

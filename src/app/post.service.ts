@@ -81,7 +81,7 @@ export class PostService {
   
 
   saveData() {
-    this.http.put('https://cc105-back-end-default-rtdb.asia-southeast1.firebasedatabase.app/post.json', 
+    this.http.put('https://cc105finals-default-rtdb.asia-southeast1.firebasedatabase.app/post.json', 
     this.listOfPosts)
     .subscribe((res) => {
      console.log(res);
@@ -89,7 +89,7 @@ export class PostService {
 }
 
 fetchData() {
-    this.http.get<Post[]>('https://cc105-back-end-default-rtdb.asia-southeast1.firebasedatabase.app/post.json')
+    this.http.get<Post[]>('https://cc105finals-default-rtdb.asia-southeast1.firebasedatabase.app/post.json')
     .subscribe((listofPosts: Post[]) => {
      console.log(listofPosts)
      this.setPosts(listofPosts);

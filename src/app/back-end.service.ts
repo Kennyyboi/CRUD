@@ -16,7 +16,7 @@ export class BackEndService {
   saveData() {
     const listOfPosts: Post[] = this.postService.getPost();
     this.http.put(
-        'https://cc105-back-end-default-rtdb.asia-southeast1.firebasedatabase.app/post.json',
+        'https://cc105finals-default-rtdb.asia-southeast1.firebasedatabase.app/post.json',
       listOfPosts)
       .subscribe((res) => {
         console.log(res)
@@ -24,7 +24,7 @@ export class BackEndService {
   }
   fetchData() {
     return this.http.get<Post[]>(
-      'https://cc105-back-end-default-rtdb.asia-southeast1.firebasedatabase.app/post.json')
+      'https://cc105finals-default-rtdb.asia-southeast1.firebasedatabase.app/post.json')
       .pipe (tap((listOfPosts: Post[]) => {
         console.log(listOfPosts)
 

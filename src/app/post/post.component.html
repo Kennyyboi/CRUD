@@ -1,10 +1,8 @@
+<div class="container">
 <h3 class="title">{{ post?.title }}</h3>
 <img class="img-responsive" src="{{ post?.imgPath }}" />
 <p class= "description">
   {{ post?.description }}
- 
-  <button class="btn btn-outline-primary" (click)="onEdit()">edit</button> -
-  <button class="btn btn-outline-danger" (click)="delete()">delete</button> 
 
 </p>
 <p class="author">Author: {{ post?.author }}</p>
@@ -32,10 +30,16 @@
     <label class="font-weight-bold">Comments</label>
     <div *ngFor="let comment of comments; let i = index">
        {{ comment }}
-      <button class="btn btn-outline-primary" (click)="onEditComment(i, 'New Comment')">Edit</button> 
+      <button class="btn btn-outline-primary" (click)="onEditComment(i, 'New Comment')">Edit</button> -
       <button class="btn btn-outline-danger" (click)="onDeleteComment(i)">Delete</button> 
     </div>
-    <input #commentInput type="text" class="form-control" placeholder="comment" />
-    <br /><button type="submit" class="btn btn-success">Add Comment</button>
+    <input #commentInput type="text" class="form-control" placeholder="comment"/>
+    <br> <button type="submit" class="btn btn-success">Add Comment</button>
   </form>
-<hr />
+  <br>
+
+  <button class="btn btn-outline-primary" (click)="onEdit()">edit</button> -
+  <button class="btn btn-outline-danger" (click)="delete()">delete</button> 
+  <br>
+  <br>
+</div>
