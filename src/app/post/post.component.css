@@ -3,32 +3,52 @@
     align-items: center;
     font-size: 20px;
     margin-top: 5%;
-    margin-left: 55%;
+    margin-left: 40%;
 }
 
 .img-responsive{
     box-shadow: 5px 5px 20px 20px #f5000040;
-    margin-left:10vh;
+    margin-left:30vh;
     width: 80vh;
 }
 
 .description{
-    margin-left: 15%;
+    margin-left: 40%;
+    font-size: small;
+    text-align: justify;
 }
 
 .author{
     margin-left: 20%;
+    text-align: justify;
 }
 .date{
     margin-left: 20%;
 }
 
 .btn.btn-outline-primary{
-    margin-left: 30%; 
+    margin-left: 20%; 
+    font-size: small;
 }
 .forms{
     margin-left: 20%;
 }
 .btn.btn-primary{
-    margin-left: 100px;
+    margin-left: 20%;
+    padding: 1%;
+
+}
+.btn.btn-outline-danger{
+    width: fit-content;
+    font-size: small;
+}
+
+.container {
+    border: 2px solid #ffffffe3; 
+    padding: 1px; 
+    width: 200%; 
+    margin: 0 auto; 
+}
+.form-control{
+    width: 50%;
 }
